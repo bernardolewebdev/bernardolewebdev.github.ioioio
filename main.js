@@ -48,8 +48,11 @@ function getGateau(token){
     fetch(url, requete)
         .then(reponse=>reponse.json())
         .then(messageDuServeur=>{
-            console.log(messageDuServeur)
-            content.innerHTML = messageDuServeur
+            //console.log(messageDuServeur)
+            messageDuServeur.forEach((gateau)=>{
+                content.innerHTML += gateau.name
+            })
+
         })
 
 }
